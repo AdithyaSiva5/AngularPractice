@@ -1,9 +1,8 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { DetailsComponent } from './details/details.component';
 
 @Component({
   selector: 'app-user',
-  imports: [DetailsComponent],
+  imports: [],
   templateUrl: './user.component.html',
   styleUrl: './user.component.css',
 })

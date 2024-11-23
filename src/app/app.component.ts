@@ -1,24 +1,15 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { UserComponent } from './user/user.component';
-import { DetailsComponent } from './user/details/details.component';
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, UserComponent],
+  imports: [CommonModule,NgOptimizedImage],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   isLoading: boolean = true; // Initially, content is loading
   contentLoaded: boolean = false; // Tracks if the content is ready
-
-  ngOnInit() {
-    // Simulate a loading delay of 2 seconds (can be more)
-    setTimeout(() => {
-      this.isLoading = false; // Set loading to false after 2 seconds
-      this.contentLoaded = true; // Content is now loaded
-    }, 2000);
-  }
+  title = 'sample';
+  imglogo = 'https://next-images.123rf.com/index/_next/image/?url=https://assets-cdn.123rf.com/index/static/assets/top-section-bg.jpeg&w=3840&q=75';
 }
