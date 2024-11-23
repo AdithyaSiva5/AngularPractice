@@ -8,8 +8,9 @@ import { DetailsComponent } from './details/details.component';
   styleUrl: './user.component.css',
 })
 export class UserComponent {
-  message: any = 'Not Recieved Yet';
-  recieve(msg: string) {
+  message = '';
+
+  recievemsg(msg: string) {
     this.message = msg;
   }
 }

@@ -1,1 +1,12 @@
-<app-user></app-user> 
+<div *ngIf="isLoading; else content">
+  <!-- Show placeholder or loading spinner while content is loading -->
+  <div class="loading-placeholder">Loading...</div>
+</div>
+
+<ng-template #content>
+  <!-- Content that appears after loading -->
+  <div *ngIf="contentLoaded">
+    <h1>Welcome to the Loaded Content!</h1>
+    <p>This is the content that was loaded after a delay of 2 seconds.</p>
+  </div>
+</ng-template>

@@ -7,9 +7,9 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrl: './details.component.css',
 })
 export class DetailsComponent {
-  @Output() sentNoti = new EventEmitter<string>();
+  @Output() sentEvent = new EventEmitter();
 
-  sent() {
-    this.sentNoti.emit('KNOCK KNOWCK');
+  sentMessage() {
+    this.sentEvent.emit('KNOCK KNOCK');
   }
 }
