@@ -1,10 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import {
-  FormsModule,
-  ReactiveFormsModule,
-  FormControl,
-  FormGroup,
-} from '@angular/forms';
+import { ReactiveFormsModule, Validator, Validators } from '@angular/forms';
+import { FormsModule, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-user',
@@ -19,8 +15,8 @@ export class UserComponent {
     alert(this.framework);
   }
   profileForm = new FormGroup({
-    name: new FormControl(''),
-    email: new FormControl(''),
+    name: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
   });
   submit() {
     alert(this.profileForm.value.name + ' | ' + this.profileForm.value.email);
