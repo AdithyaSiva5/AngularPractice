@@ -13,5 +13,5 @@ export class AppComponent {
   contentLoaded: boolean = false; // Tracks if the content is ready
   title = 'sample';
   imglogo =
-    'https://next-images.123rf.com/index/_next/image/?url=https://assets-cdn.123rf.com/index/static/assets/top-section-bg.jpeg&w=3840&q=75';
+    'https://next-images.123rf.com/ind  ex/_next/image/?url=https://assets-cdn.123rf.com/index/static/assets/top-section-bg.jpeg&w=3840&q=75';
 }
