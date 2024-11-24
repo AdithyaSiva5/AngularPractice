@@ -1,6 +1,14 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  Injectable,
+  OnInit,
+} from '@angular/core';
 import { ReactiveFormsModule, Validator, Validators } from '@angular/forms';
 import { FormsModule, FormControl, FormGroup } from '@angular/forms';
+import { UserService } from '../services/UserService';
 
 @Component({
   selector: 'app-user',
@@ -8,17 +16,15 @@ import { FormsModule, FormControl, FormGroup } from '@angular/forms';
   templateUrl: './user.component.html',
   styleUrl: './user.component.css',
 })
-export class UserComponent {
-  framework: string = '';
+export class UserComponent implements OnInit {
+  userInfo: any;
+  carno: number = 2;
+  car: string | undefined;  
 
-  showframework() {
-    alert(this.framework);
-  }
-  profileForm = new FormGroup({
-    name: new FormControl('', Validators.required),
-    email: new FormControl('', [Validators.required, Validators.email]),
-  });
-  submit() {
-    alert(this.profileForm.value.name + ' | ' + this.profileForm.value.email);
+  constructor(private userService: UserService) {}
+
+  ngOnInit(): void {
+    this.userInfo = this.userService.getCars();
+    this.car = this.userService.getCar(this.carno);
   }
 }
