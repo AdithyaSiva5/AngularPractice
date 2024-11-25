@@ -1,0 +1,11 @@
+<div class="border rounded p-4 my-2">
+  <div class="card-title text-xl font-bold mb-2">
+    <ng-content select="[card-title]"></ng-content>
+  </div>
+  <div class="card-content">
+    <ng-content select="[card-content]"></ng-content>
+  </div>
+  <div class="mt-4 text-sm text-gray-600">
+    Content Status: {{ contentStatus }}
+  </div>
+</div>

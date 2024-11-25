@@ -1,0 +1,25 @@
+<div class="p-4">
+  <h2 class="text-2xl mb-4">Content Projection Demo</h2>
+
+  <app-cardcomponent>
+    <h3 card-title>{{ title }}</h3>
+    <div card-content>
+      <p #projectedText>{{ content }}</p>
+      <input
+        type="text"
+        [(ngModel)]="content"
+        class="mt-2 p-2 border rounded w-full"
+        placeholder="Edit content to see AfterContentChecked in action"
+      />
+    </div>
+  </app-cardcomponent>
+
+  <div class="mt-4">
+    <button
+      (click)="updateTitle()"
+      class="bg-blue-500 text-white px-4 py-2 rounded"
+    >
+      Update Title
+    </button>
+  </div>
+</div>
