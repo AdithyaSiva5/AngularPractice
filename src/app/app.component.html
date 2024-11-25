@@ -1,1 +1,7 @@
-<app-taskform></app-taskform>
+<div class="'p-4">
+    <button (click)="toggleTheme()" class="mb-4 px-4 bg-gray-200">
+        Toggle Theme        
+    </button>
+    
+    <app-user-form [theme]="currentTheme"></app-user-form>
+</div>
