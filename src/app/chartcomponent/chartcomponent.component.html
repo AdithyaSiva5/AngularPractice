@@ -1,0 +1,27 @@
+<p>chartcomponent works!</p>
+<div class="border rounded p-4">
+  <h3 class="text-lg font-bold mb-4">Data Visualization</h3>
+
+  <!-- Canvas for chart -->
+  <canvas
+    #chartCanvas
+    width="400"
+    height="200"
+    class="w-full bg-gray-50"
+  ></canvas>
+
+  <div class="mt-4 space-y-2">
+    <button
+      (click)="updateData()"
+      class="bg-blue-500 text-white px-4 py-2 rounded"
+    >
+      Update Data
+    </button>
+
+    <div class="text-sm text-gray-600">
+      Last render time: {{ lastRenderTime }}
+    </div>
+
+    <div class="text-sm text-gray-600">View checks: {{ viewCheckCount }}</div>
+  </div>
+</div>
